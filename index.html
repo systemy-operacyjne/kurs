@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07131f" />
+    <meta name="description" content="Interaktywny kurs Systemy Operacyjne: Windows, Windows Server, openSUSE i VirtualBox." />
+    <title>Systemy Operacyjne</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="aurora aurora--one"></div>
+    <div class="aurora aurora--two"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Nawigacja po kursie">
+        <div class="brand-row">
+          <a class="brand" href="#start" aria-label="Strona startowa kursu">
+            <span><b>Systemy Operacyjne</b></span>
+          </a>
+          <button class="icon-button sidebar-close" id="closeSidebar" aria-label="Zamknij menu">×</button>
+        </div>
+
+        <div class="mission-card">
+          <span class="eyebrow">BIEŻĄCY MODUŁ</span>
+          <strong id="missionName">Wybierz moduł</strong>
+          <div class="progress-track" aria-label="Postęp kursu"><i id="progressFill"></i></div>
+          <p><b id="progressNumber">0</b> / <span id="lessonCount">0</span> lekcji ukończonych</p>
+        </div>
+
+        <nav class="module-nav" id="moduleNav" aria-label="Moduły kursu"></nav>
+
+        <div class="sidebar-footer">
+          <button class="utility-button" id="openSearch">
+            <span>⌕</span> Przeszukaj kurs <kbd>⌘ K</kbd>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content" id="mainContent">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="openSidebar" aria-label="Otwórz menu">☰</button>
+          <div class="crumb"><span>Systemy Operacyjne</span><i>/</i><b id="breadcrumb">Start kursu</b></div>
+          <div class="top-actions">
+            <button class="search-button" id="openSearchTop"><span>⌕</span><span>Znajdź w kursie</span><kbd>⌘ K</kbd></button>
+            <button class="mode-switch" id="modeSwitch" aria-label="Zmień motyw" title="Zmień motyw">◐</button>
+          </div>
+        </header>
+
+        <section class="hero" id="hero" aria-labelledby="moduleTitle">
+          <div class="hero-radar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+          <div class="hero-copy">
+            <div class="hero-meta"><span class="status-dot"></span><span id="moduleIndex">MODUŁ 00</span><span>•</span><span id="moduleLessonCount">0 LEKCJI</span></div>
+            <h1 id="moduleTitle">Systemy Operacyjne</h1>
+            <p id="moduleSummary"></p>
+            <div class="hero-controls">
+              <button class="primary-button" id="jumpToFirst">Rozpocznij moduł <span>↓</span></button>
+              <button class="ghost-button" id="markModuleDone">Ukończ moduł <span>✓</span></button>
+            </div>
+          </div>
+          <div class="hero-data" id="heroData"></div>
+        </section>
+
+        <section class="module-stage" aria-label="Lekcje modułu">
+          <div class="stage-header">
+            <div>
+              <span class="eyebrow">TEMATY MODUŁU</span>
+              <h2>Wybierz temat i ucz się przez praktykę.</h2>
+            </div>
+            <div class="stage-counter" id="stageCounter"></div>
+          </div>
+          <div class="module-lead" id="moduleLead"></div>
+          <div class="lesson-grid" id="lessonGrid"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
+      <form method="dialog" class="dialog-backdrop"><button aria-label="Zamknij wyszukiwarkę"></button></form>
+      <section class="search-panel">
+        <header><span class="eyebrow" id="searchTitle">PRZESZUKAJ BAZĘ WIEDZY</span><button class="icon-button" id="closeSearch" aria-label="Zamknij wyszukiwarkę">×</button></header>
+        <label class="search-field"><span>⌕</span><input id="searchInput" type="search" autocomplete="off" placeholder="np. DHCP, sudo, uprawnienia NTFS…" /><kbd>ESC</kbd></label>
+        <div class="search-hint" id="searchHint">Wpisz minimum 2 znaki, aby znaleźć temat lub fragment instrukcji.</div>
+        <div class="search-results" id="searchResults"></div>
+      </section>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <aside class="cookie-banner" id="cookieBanner" aria-labelledby="cookieTitle" hidden>
+      <div class="cookie-icon" aria-hidden="true">✓</div>
+      <div>
+        <h2 id="cookieTitle">Zapamiętać Twój postęp?</h2>
+        <p>Możemy zapisać ukończone lekcje w jednym ciasteczku na tym urządzeniu. Nie zbieramy danych ani nie przekazujemy ich dalej.</p>
+        <div class="cookie-actions">
+          <button class="cookie-accept" id="acceptCookies">Tak, zapamiętaj</button>
+          <button class="cookie-decline" id="declineCookies">Tylko w tej sesji</button>
+        </div>
+      </div>
+    </aside>
+    <script src="course-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
